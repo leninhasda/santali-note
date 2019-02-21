@@ -10,7 +10,7 @@ textarea {
     font-size: 1.3rem;
     border: 1px solid #eee;
     box-shadow: 0 1px 1px #aaa;
-    width: 100%;
+    width: calc(100% - 14px);
     margin: 30px auto 30px;
     display: block;
     padding: 7px;
@@ -62,3 +62,19 @@ div.grid {
     padding: 0 7px;
     border-radius:0;
 }
+
+@media screen and (max-width: 750px) {
+    .grid {
+        display: block !important;
+    }
+    li {
+        font-size: 1.2rem;
+    }
+    .right {
+        font-size: 1.2rem;
+    }
+    .wrap {
+        width: 95% !important;
+    }
+}
+
