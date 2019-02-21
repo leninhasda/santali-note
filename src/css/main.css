@@ -2,13 +2,16 @@ body {
     font-size: 18px;
     font-family: 'Open Sans', sans-serif;
 }
-
+.wrap {
+    width: 80%;
+    margin: auto;
+}
 textarea {
     font-size: 1.3rem;
     border: 1px solid #eee;
     box-shadow: 0 1px 1px #aaa;
-    width: 80%;
-    margin: 30px auto 0;
+    width: 100%;
+    margin: 30px auto 30px;
     display: block;
     padding: 7px;
     line-height: 1.5;
@@ -29,7 +32,6 @@ li {
 }
 
 div.intro {
-    width: 80%;
     margin: 40px auto 0;
     text-align: center;
 }
