@@ -31,6 +31,12 @@ li {
     font-size: 1.8rem;
 }
 
+ul.box-grid {
+    display: grid;
+    grid-template-columns: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
+    grid-templaterows: auto;
+}
+
 div.intro {
     margin: 40px auto 0;
     text-align: center;
