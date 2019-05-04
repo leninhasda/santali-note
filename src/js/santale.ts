@@ -1,53 +1,28 @@
-
-class Santale {
-
+/*
+ * Santali Parser
+ * parses given word to santali
+ **/
+class SantaliParser {
+    // character patterns
     data: any = {
-        "patterns": [
-            { "find": "A.~", "replace": "Ạ̃" },
-            { "find": "A~.", "replace": "Ạ̃" },
-            { "find": "a.~", "replace": "ạ̃" },
-            { "find": "a~.", "replace": "ạ̃" },
-            { "find": "A.", "replace": "Ạ" },
-            { "find": "a.", "replace": "ạ" },
-            { "find": "C'", "replace": "C̓" },
-            { "find": "c'", "replace": "c̓" },
-            { "find": "D.", "replace": "Ḍ" },
-            { "find": "d.", "replace": "ḍ" },
-            { "find": "E.", "replace": "Ẹ" },
-            { "find": "e.", "replace": "ẹ" },
-            { "find": "E~", "replace": "Ẽ" },
-            { "find": "e~", "replace": "ẽ" },
-            { "find": "K'", "replace": "K̓" },
-            { "find": "k'", "replace": "k̓" },
-            { "find": "N'", "replace": "Ń" },
-            { "find": "n'", "replace": "ń" },
-            { "find": "N.", "replace": "Ṇ" },
-            { "find": "n.", "replace": "ṇ" },
-            { "find": "N>", "replace": "Ṅ" },
-            { "find": "n>", "replace": "ṅ" },
-            { "find": "P'", "replace": "P̓" },
-            { "find": "p'", "replace": "p̓" },
-            { "find": "R.", "replace": "Ṛ" },
-            { "find": "r.", "replace": "ṛ" },
-            { "find": "T'", "replace": "T̓" },
-            { "find": "t'", "replace": "t̓" },
-            { "find": "T.", "replace": "Ṭ" },
-            { "find": "t.", "replace": "ṭ" },
-            { "find": "A~", "replace": "Ã" },
-            { "find": "a~", "replace": "ã" },
-            { "find": "E~", "replace": "Ẽ" },
-            { "find": "e~", "replace": "ẽ" },
-            { "find": "I~", "replace": "Ĩ" },
-            { "find": "i~", "replace": "ĩ" },
-            { "find": "P'", "replace": "P̓" },
-            { "find": "p'", "replace": "p̓" },
-            { "find": "O.", "replace": "Ọ" },
-            { "find": "o.", "replace": "ọ" },
-            { "find": "O~", "replace": "Õ" },
-            { "find": "o~", "replace": "õ" },
-            { "find": "U~", "replace": "Ũ" },
-            { "find": "u~", "replace": "ũ" }
-        ]
+        "A.~": "Ạ̃", "A~.": "Ạ̃", "A.": "Ạ", "A~": "Ã",
+        "a.~": "ạ̃", "a~.": "ạ̃", "a.": "ạ", "a~": "ã",
+        "C'": "C̓" , "c'": "c̓" ,
+        "D.": "Ḍ" , "d.": "ḍ" ,
+        "E-~": "Ḝ", "E~-": "Ḝ", "E.": "Ẹ", "E~": "Ẽ", "E-": "Ḛ",
+        "e-~": "ḝ", "e~-": "ḝ", "e.": "ẹ", "e~": "ẽ", "e-": "ḛ",
+        "H'": "Ȟ", "h'": "ȟ",
+        "K'": "K̓" , "k'": "k̓" ,
+        "N'": "Ń", "N.": "Ṇ", "N>": "Ṅ",
+        "n'": "ń" , "n.": "ṇ" , "n>": "ṅ" ,
+        "P'": "P̓" , "p'": "p̓" ,
+        "R.": "Ṛ" , "r.": "ṛ" ,
+        "T'": "T̓", "T.": "Ṭ",
+        "t'": "t̓" , "t.": "ṭ" ,
+        "I~": "Ĩ" , "i~": "ĩ" ,
+        "O-~": "Ǭ", "O~-": "Ǭ", "O.": "Ọ", "O~": "Õ", "O-": "Ǫ",
+        "o-~": "ǭ", "o~-": "ǭ", "o.": "ọ", "o~": "õ", "o-": "ǫ",
+        "U~": "Ũ" , "u~": "ũ"
     }
 
     parse (input: string) {
@@ -56,11 +31,11 @@ class Santale {
             let start = cur, end = cur + 1;
             let matched = false
 
-            for (let i = 0; i < this.data.patterns.length; ++i) {
-                let pattern = this.data.patterns[i];
-                end = cur + pattern.find.length;
-                if (end <= input.length && input.substring(start, end) == pattern.find) {
-                    output += pattern.replace;
+            for (let find in this.data) {
+                let pattern = this.data[find];
+                end = cur + find.length;
+                if (end <= input.length && input.substring(start, end) == find) {
+                    output += pattern;
                     cur = end - 1;
                     matched = true
                     break;
@@ -76,4 +51,4 @@ class Santale {
     }
 }
 
-export default Santale;
+export default SantaliParser;
