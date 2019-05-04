@@ -14,10 +14,21 @@ module.exports = {
         filename: '[name].[hash:7].js'
     },
     resolve: {
-        extensions: ['.ts', '.json', '.css']
+        extensions: ['.ts', '.json', '.css', '.ttf']
     },
     module: {
         rules: [
+            {
+                test: /\.ttf$/,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            name: '[name].[ext]'
+                        }
+                    }
+                ]
+            },
             {
                 test: /\.ts$/,
                 loader: 'ts-loader'

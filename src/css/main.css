@@ -1,6 +1,10 @@
+@font-face {
+    font-family: "Santali";
+    src: url(santali-101.ttf);
+}
 body {
     font-size: 18px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Santali", "Open Sans", sans-serif;
 }
 .wrap {
     width: 80%;
@@ -15,6 +19,7 @@ textarea {
     display: block;
     padding: 7px;
     line-height: 1.5;
+    font-family: "Santali", "Open Sans", sans-serif;
 }
 textarea:focus {
     outline: none !important;
