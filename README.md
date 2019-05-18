@@ -1,3 +1,3 @@
 # Santali Note
 
-Demo app to try out [Santal-e](https://github.com/leninhasda/santal-e) Phonetic
+Demo app to try out [Santali Node](https://apps.leninhasda.me/santali-note) Phonetic

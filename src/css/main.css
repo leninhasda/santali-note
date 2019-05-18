@@ -1,25 +1,17 @@
-@font-face {
-    font-family: "Santali";
-    src: url(santali-101.ttf);
-}
 body {
     font-size: 18px;
-    font-family: "Santali", "Open Sans", sans-serif;
-}
-.wrap {
-    width: 80%;
-    margin: auto;
+    font-family: "Open Sans", sans-serif;
+    background: #f0f0f0;
 }
 textarea {
     font-size: 1.3rem;
     border: 1px solid #eee;
     box-shadow: 0 1px 1px #aaa;
     width: calc(100% - 14px);
-    margin: 30px auto 30px;
     display: block;
     padding: 7px;
     line-height: 1.5;
-    font-family: "Santali", "Open Sans", sans-serif;
+    font-family: "Open Sans", sans-serif;
 }
 textarea:focus {
     outline: none !important;
@@ -35,57 +27,29 @@ li {
     padding: 0px 10px;
     font-size: 1.8rem;
 }
-
-ul.box-grid {
+.wrap {
+    width: 100%;
+    margin: auto;
     display: grid;
-    grid-template-columns: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
+    grid-template-columns: 40% 60%;
     grid-templaterows: auto;
 }
 
 div.intro {
-    margin: 40px auto 0;
+    background: #f0f0f0;
+}
+div.intro h2 {
     text-align: center;
 }
 
-div.grid {
+div.grid > div{
     display: grid;
-    grid-template-columns: 50% 50%;
-}
-.left {
-    text-align: center;
-}
-.right {
-    text-align: center;
-    font-size: 2rem;
-}
-.right div {
-    margin-bottom: 10px;
-}
-.right span {
-    border: 1px solid #bbb;
-    background: #efefef;
-    padding: 0 7px;
-    border-radius: 2px;
-}
-.right span.n {
-    border: none;
-    background: none;
-    padding: 0 7px;
-    border-radius:0;
+    grid-template-columns: 33% 33% 33%;
 }
 
 @media screen and (max-width: 750px) {
-    .grid {
-        display: block !important;
-    }
-    li {
-        font-size: 1.2rem;
-    }
-    .right {
-        font-size: 1.2rem;
-    }
     .wrap {
-        width: 95% !important;
+        display: block;
     }
 }
 
